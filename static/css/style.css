@@ -1,0 +1,19 @@
+body {
+    background-color: #F7F7FF;
+    text-align: center;
+}
+
+.banner {
+    background-color: #577399;
+    color: red;
+    display: flex;
+    top: 0;
+    display: grid;
+    place-items: center;
+}
+
+h1 {
+    color: #F7F7FF;
+    text-align: center;
+}
+
