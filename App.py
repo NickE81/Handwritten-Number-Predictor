@@ -1,7 +1,6 @@
 from flask  import Flask, request, render_template
 from keras.saving import load_model
-from keras.utils import load_img
-from keras.preprocessing import image
+from keras.utils import load_img, img_to_array
 import numpy as np
 import base64
 from io import BytesIO
@@ -26,8 +25,8 @@ def predict():
     if img_file is None:
         return render_template("predict.html", img = None)
     img_as_bytes = img_file.read()
-    img = image.load_img(BytesIO(img_as_bytes), target_size = (28, 28), color_mode = "grayscale")
-    img_array = image.img_to_array(img)
+    img = load_img(BytesIO(img_as_bytes), target_size = (28, 28), color_mode = "grayscale")
+    img_array = img_to_array(img)
     img_array = np.expand_dims(img_array, axis = 0)
     img_array = img_array / 255
 
