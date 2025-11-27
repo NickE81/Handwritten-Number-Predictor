@@ -1,4 +1,4 @@
-from flask  import Flask, request, render_template
+from flask import Flask, request, render_template
 from keras.saving import load_model
 from keras.utils import load_img, img_to_array
 import numpy as np
